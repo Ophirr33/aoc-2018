@@ -18,3 +18,15 @@ pub fn solve2(nums: &str) -> isize {
         }
     }
 }
+
+#[test]
+fn test1() {
+    let res = solve1("+1\n-2\n+5\n-3\n0\n-10");
+    assert_eq!(-9, res);
+}
+
+#[test]
+fn test2() {
+    let res = solve2("+1\n-2\n+5\n-3\n0\n-10");
+    assert_eq!(1, res);
+}

@@ -48,3 +48,27 @@ pub fn solve2(words: &str) -> String {
     }
     panic!("Could not find words with only one letter different")
 }
+
+#[test]
+fn test1() {
+    let test_data = "abcdef
+bababc
+abbcde
+abcccd
+aabcdd
+abcdee
+ababab";
+    assert_eq!(solve1(test_data), 12);
+}
+
+#[test]
+fn test2() {
+    let test_data = "abcde
+fghij
+klmno
+pqrst
+fguij
+axcye
+wvxyz";
+    assert_eq!(&solve2(test_data), "fgij");
+}
