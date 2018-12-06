@@ -1,7 +1,10 @@
 use std::collections::HashSet;
+use crate::err;
 
 pub fn solve1(nums: &str) -> isize {
-    nums.lines().map(|s| s.parse::<isize>().unwrap()).sum()
+    nums.lines()
+        .map(|s| s.parse::<isize>().expect(err!()))
+        .sum()
 }
 
 pub fn solve2(nums: &str) -> isize {
@@ -9,7 +12,7 @@ pub fn solve2(nums: &str) -> isize {
     let mut sum: isize = 0;
     set.insert(sum);
     loop {
-        for n in nums.lines().map(|s| s.parse::<isize>().unwrap()) {
+        for n in nums.lines().map(|s| s.parse::<isize>().expect(err!())) {
             sum += n;
             if set.contains(&sum) {
                 return sum;

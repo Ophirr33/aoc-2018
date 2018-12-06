@@ -25,7 +25,7 @@ fn letters_diff(word1: &str, word2: &str) -> usize {
         .chars()
         .zip(word2.chars())
         .filter(|(c1, c2)| c1 != c2)
-        .fold(0, |acc, _| acc + 1)
+        .count()
 }
 
 fn extract_common(word1: &str, word2: &str) -> String {
@@ -51,24 +51,12 @@ pub fn solve2(words: &str) -> String {
 
 #[test]
 fn test1() {
-    let test_data = "abcdef
-bababc
-abbcde
-abcccd
-aabcdd
-abcdee
-ababab";
+    let test_data = "abcdef\nbababc\nabbcde\nabcccd\naabcdd\nabcdee\nababab";
     assert_eq!(solve1(test_data), 12);
 }
 
 #[test]
 fn test2() {
-    let test_data = "abcde
-fghij
-klmno
-pqrst
-fguij
-axcye
-wvxyz";
+    let test_data = "abcde\nfghij\nklmno\npqrst\nfguij\naxcye\nwvxyz";
     assert_eq!(&solve2(test_data), "fgij");
 }
