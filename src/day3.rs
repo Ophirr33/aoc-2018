@@ -133,3 +133,9 @@ fn test1() {
     let test_data = "#1 @ 1,3: 4x4\n#2 @ 3,1: 4x4\n#3 @ 5,5: 2x2";
     assert_eq!(solve1(test_data), 4);
 }
+
+#[test]
+fn test2() {
+    let test_data = "#1 @ 1,3: 4x4\n#2 @ 3,1: 4x4\n#3 @ 5,5: 2x2";
+    assert_eq!(solve2(test_data), 3);
+}
